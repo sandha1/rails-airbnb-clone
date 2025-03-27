@@ -1,20 +1,28 @@
 <div class="container mt-3">
     <div class="row justify-content-center">
-      <% @flats.each do |flat| %>
-        <div class="col-sm-6 col-md-4">
 
-          <div class="card flat-card">
-            <img src="" class="card-img-top" alt="">
-            <div class="card-body">
-              <h5 class="card-title"><%= flat.name %></h5>
-              <p class="card-text"><%= flat.description %></p>
-              <div class="btn-right">
-                <%= link_to "Edit", edit_flat_path(flat), class: "btn btn-blue" %>
+      <% if @flats %>
+        <% @flats.each do |flat| %>
+          <div class="col-sm-6 col-md-4">
+
+            <div class="card flat-card">
+              <% if flat.photo.attached? %>
+                <%= image_tag(flat.photo, class: "card-img-top", alt: flat.name) %>
+              <% else %>
+                <%= image_tag("default_image.jpg", class: "card-img-top", alt: flat.name) %>
+              <% end %>
+              <div class="card-body">
+                <h5 class="card-title"><%= flat.name %></h5>
+                <p class="card-text"><%= flat.description %></p>
+                <div class="btn-right">
+                  <span class="me-2"><%= link_to "Edit", edit_flat_path(flat), class: "btn btn-orange" %></span>
+                  <span><%= link_to "Delete", flat_path(flat), class: "btn btn-red", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></span>
+                </div>
               </div>
             </div>
-          </div>
 
-        </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
 </div>

@@ -1,7 +1,7 @@
 class FlatsController < ApplicationController
 
   def index
-    @flats = Flat.all
+    @flats = Flat.all.order(updated_at: :desc)
   end
 
   def show
@@ -30,11 +30,18 @@ class FlatsController < ApplicationController
   def update
     @flat = Flat.find(params[:id])
     @flat.update(flat_params)
+    redirect_to my_flats_path
+  end
+
+  def destroy
+    @flat = Flat.find(params[:id])
+    @flat.destroy
+    redirect_to my_flats_path, status: :see_other
   end
 
   private
 
   def flat_params
-    params.require(:flat).permit(:name, :description, :address, :price_per_night, :number_of_guests)
+    params.require(:flat).permit(:name, :description, :address, :price_per_night, :photo)
   end
 end

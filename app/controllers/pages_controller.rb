@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
 
   def my_flats
-    @flats = current_user.flats
+    @flats = current_user.flats.order(updated_at: :desc)
   end
 end

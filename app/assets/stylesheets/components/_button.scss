@@ -10,6 +10,30 @@
   }
 }
 
+.btn-orange {
+  background-color: #EC9A29;
+  color: #DAD2D8;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: lighten(#EC9A29, 15%);
+    color: #DAD2D8;
+  }
+}
+
+.btn-red {
+  background-color: #A8201A;
+  color: #DAD2D8;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: lighten(#A8201A, 15%);
+    color: #DAD2D8;
+  }
+}
+
 .btn-right {
   display: flex;
   justify-content: end;
