@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container">
     <div class="row justify-content-center">
       <% @flats.each do |flat| %>
         <div class="col-sm-6 col-md-4">
@@ -8,7 +8,7 @@
             <div class="card-body">
               <h5 class="card-title"><%= flat.name %></h5>
               <p class="card-text"><%= flat.description %></p>
-              <div class="button-right">
+              <div class="btn-right">
                 <%= link_to "More infos", flat_path(flat), class: "btn btn-blue" %>
               </div>
             </div>
