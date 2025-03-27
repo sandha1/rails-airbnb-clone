@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  get "up" => "rails/health#show", as: :rails_health_check
-
-  root to: "pages#home"
+  root to: "flats#index"
 
   resources :flats
+
+  get "/my_flats", to: "pages#my_flats"
 end

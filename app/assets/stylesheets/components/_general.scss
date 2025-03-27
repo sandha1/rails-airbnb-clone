@@ -1,0 +1,27 @@
+body {
+  margin-top: 4rem !important;
+}
+
+#logo {
+  color: #A8201A;
+  margin-bottom: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #143642;
+  font-weight: bold;
+}
+
+p {
+  color: #143642;;
+}
+
+a {
+  text-decoration: none;
+  color: #0F8B8D;
+  font-weight: bold;
+
+  &:hover {
+    color: lighten(#0F8B8D, 15%);
+  }
+}

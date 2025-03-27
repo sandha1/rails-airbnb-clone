@@ -1,0 +1,13 @@
+.flat-card {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  background-color: DAD2D8;
+}
+
+.button-right {
+  display: flex;
+  justify-content: end;
+}
