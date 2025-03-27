@@ -1,12 +1,24 @@
 <div class="container flex-center">
 
   <% if @flat.photo.attached? %>
-    <%= image_tag(@flat.photo, class: "banner", height: '500px') %>
+    <%= image_tag(@flat.photo, class: "banner") %>
   <% else %>
-    <%= image_tag("default_appliance.jpg", class: "banner", height: '500px') %>
+    <%= image_tag("default_image.jpg", class: "banner") %>
   <% end %>
 
-  <h5 class="card-title"><%= @flat.name %></h5>
-  <p class="card-text"><%= @flat.description %></p>
+  <div class="mt-3">
+    <h5><%= @flat.name %></h5>
+    <p><%= @flat.description %></p>
+    <p><%= @flat.price_per_night %> €</p>
+  </div>
+
+
+  <% if @flat.user != current_user %>
+    <%= simple_form_for([@flat, @booking]) do |f| %>
+      <%= f.input :start_date, label: "Start Date" %>
+      <%= f.input :end_date, label: "End Date" %>
+      <%= f.submit "Book Now" %>
+    <% end %>
+  <% end %>
 
 </div>

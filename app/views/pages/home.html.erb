@@ -1,2 +1,26 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+    <div class="row justify-content-center">
+      <% if @flats %>
+        <% @flats.each do |flat| %>
+          <div class="col-sm-6 col-md-4">
+
+            <div class="card flat-card">
+              <% if flat.photo.attached? %>
+                <%= image_tag(flat.photo, class: "card-img-top", alt: flat.name) %>
+              <% else %>
+                <%= image_tag("default_image.jpg", class: "card-img-top", alt: flat.name) %>
+              <% end %>
+              <div class="card-body">
+                <h5 class="card-title"><%= flat.name %></h5>
+                <p class="card-text"><%= flat.description %></p>
+                <div class="btn-right">
+                  <%= link_to "More infos", flat_path(flat), class: "btn btn-blue" %>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+</div>

@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5 {
 }
 
 p {
-  color: #143642;;
+  color: #143642;
 }
 
 a {
@@ -34,4 +34,16 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.color-blue {
+  color: #143642;
+}
+
+.color-orange {
+  color: #EC9A29;
+}
+
+.color-red {
+  color: #A8201A;
 }

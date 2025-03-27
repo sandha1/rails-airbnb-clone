@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row justify-content-center">
+
+      <% if @bookings %>
+        <% @bookings.each do |booking| %>
+          <div class="col-sm-6 col-md-4">
+
+            <div class="card flat-card">
+              <% if booking.flat.photo.attached? %>
+                <%= image_tag(booking.flat.photo, class: "card-img-top", alt: booking.flat.name) %>
+              <% else %>
+                <%= image_tag("default_image.jpg", class: "card-img-top", alt: booking.flat.name) %>
+              <% end %>
+              <div class="card-body">
+                <h5 class="card-title"><%= booking.flat.name %></h5>
+                <p class="card-text">Posted by <strong><%= booking.flat.user.email.split("@")[0].capitalize %></strong></p>
+                <p class="card-text"><%= booking.flat.description %></p>
+              </div>
+
+              <div class="card-body border-top">
+                <% if booking.accepted.nil? %>
+                  <p class="card-text">Booking<span class="color-orange ms-2"><i class="fa-regular fa-hourglass-half fa-spin" style="--fa-animation-duration: 15s;"></i></span></p>
+                <% elsif booking.accepted %>
+                  <p class="card-text">Booking<span class="color-blue ms-2"><i class="fa-solid fa-circle-check fa-beat"></i></span></p>
+                <% else %>
+                  <p class="card-text">Booking<span class="color-red ms-2"><i class="fa-solid fa-circle-xmark"></i></span></p>
+                <% end %>
+                <p class="card-text">From <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong></p>
+              </div>
+
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+</div>
