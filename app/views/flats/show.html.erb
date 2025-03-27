@@ -1,11 +1,12 @@
-<div class="container">
+<div class="container flex-center">
 
-  <div class="card flat-card">
-    <img src="" class="card-img-top" alt="">
-    <div class="card-body">
-      <h5 class="card-title"><%= @flat.name %></h5>
-      <p class="card-text"><%= @flat.description %></p>
-    </div>
-  </div>
+  <% if @flat.photo.attached? %>
+    <%= image_tag(@flat.photo, class: "banner", height: '500px') %>
+  <% else %>
+    <%= image_tag("default_appliance.jpg", class: "banner", height: '500px') %>
+  <% end %>
+
+  <h5 class="card-title"><%= @flat.name %></h5>
+  <p class="card-text"><%= @flat.description %></p>
 
 </div>

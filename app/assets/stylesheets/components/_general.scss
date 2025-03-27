@@ -29,3 +29,9 @@ a {
 .container {
   margin-top: 1rem !important;
 }
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
