@@ -19,4 +19,4 @@ end
   Flat.create!(name: Faker::Book.unique.title, description: Faker::Lorem.paragraph, address: Faker::Address.full_address, price_per_night: Faker::Number.within(range: 50..200), user: user2)
 end
 
-puts "Created my 25 flats."
+puts "Created my 15 flats."

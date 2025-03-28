@@ -6,7 +6,7 @@
 
             <div class="card flat-card">
               <% if flat.photo.attached? %>
-                <%= image_tag(flat.photo, class: "card-img-top", alt: flat.name) %>
+                <%= cl_image_tag(flat.photo, class: "card-img-top", alt: flat.name) %>
               <% else %>
                 <%= image_tag("default_image.jpg", class: "card-img-top", alt: flat.name) %>
               <% end %>

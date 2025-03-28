@@ -1,7 +1,7 @@
 <div class="container flex-center">
 
   <% if @flat.photo.attached? %>
-    <%= image_tag(@flat.photo, class: "banner") %>
+    <%= cl_image_tag(@flat.photo, class: "banner") %>
   <% else %>
     <%= image_tag("default_image.jpg", class: "banner") %>
   <% end %>
