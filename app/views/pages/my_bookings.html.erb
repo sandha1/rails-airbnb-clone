@@ -7,7 +7,7 @@
 
             <div class="card flat-card">
               <% if booking.flat.photo.attached? %>
-                <%= cl_image_tag(booking.flat.photo, class: "card-img-top", alt: booking.flat.name) %>
+                <%= cl_image_tag(booking.flat.photo.key, class: "card-img-top", alt: booking.flat.name) %>
               <% else %>
                 <%= image_tag("default_image.jpg", class: "card-img-top", alt: booking.flat.name) %>
               <% end %>
