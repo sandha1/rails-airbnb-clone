@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 
   def my_flats
     @flats = current_user.flats.order(updated_at: :desc)
+    @flat = Flat.new
   end
 
   def my_bookings
