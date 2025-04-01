@@ -1,5 +1,10 @@
 <div class="container">
     <div class="row justify-content-center">
+
+      <div>
+        <%= render "shared/searchbar", flats: @flats %>
+      </div>
+
       <% if @flats %>
         <% @flats.each do |flat| %>
           <div class="col-sm-6 col-md-4">

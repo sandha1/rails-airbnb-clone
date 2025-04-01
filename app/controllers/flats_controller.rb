@@ -3,7 +3,11 @@ class FlatsController < ApplicationController
   before_action :set_flat, only: [:show, :edit, :update, :destroy]
 
   def index
-    @flats = Flat.all.order(updated_at: :desc)
+    if params[:query].present?
+      @flats = Flat.search(params[:query])
+    else
+      @flats = Flat.all.order(updated_at: :desc)
+    end
   end
 
   def show

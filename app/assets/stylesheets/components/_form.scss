@@ -7,12 +7,32 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px;
   color: #143642;
+  background-color: white;
 
   label {
     font-weight: bold;
+  }
+
+  input {
+    background-color: white;
+    border: 1px solid #143642;
   }
 }
 
 .form-width {
   width: 100%;
+}
+
+.form-input {
+  background-color: white;
+  border: 1px solid #143642;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  color: #143642;
+  margin: 1rem auto;
 }

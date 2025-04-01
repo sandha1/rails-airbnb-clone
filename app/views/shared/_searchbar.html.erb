@@ -1,0 +1,7 @@
+<%= form_with url: flats_path, method: :get, class: "search-container" do %>
+  <%= text_field_tag :query,
+        params[:query],
+        class: "form-control form-input",
+        placeholder: "Search a flat" %>
+  <%= submit_tag "Search", name:"", class: "btn btn-blue ms-2" %>
+<% end %>
