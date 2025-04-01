@@ -1,7 +1,8 @@
-.banner-image {
-  object-fit: cover;
-  object-position: center;
-  border-radius: 8px;
-  height: 300px;
+.banner {
   width: 100%;
+  object-fit: cover;
+  position: center;
+  border-radius: 8px;
+  height: 500px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
